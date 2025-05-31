@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Formulario De Predicción De Diabetes</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: #fff;
+    margin: 0;
+    padding: 0;
+  }
+  .container {
+    max-width: 450px;
+    background-color: rgba(0,0,0,0.6);
+    margin: 40px auto;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+  }
+  h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: 700;
+  }
+  form label {
+    display: block;
+    margin-top: 18px;
+    font-weight: 600;
+    font-size: 1.1em;
+  }
+  form input[type="number"] {
+    width: 100%;
+    padding: 10px 12px;
+    margin-top: 6px;
+    border-radius: 8px;
+    border: none;
+    font-size: 1em;
+  }
+  form input[type="submit"] {
+    margin-top: 30px;
+    width: 100%;
+    padding: 14px;
+    background: #38b6ff;
+    border: none;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 1.2em;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  form input[type="submit"]:hover {
+    background-color: #1d8edb;
+  }
+  .result {
+    margin-top: 25px;
+    background-color: #2f2f2f;
+    padding: 15px 20px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #f9d71c;
+  }
+  @media (max-width: 480px) {
+    .container {
+      margin: 20px 15px;
+      padding: 20px;
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <h2>Formulario De Predicción De Diabetes</h2>
+    <form method="POST" novalidate>
+      <label for="val1">Pregnancies (Número de embarazos) [0 a 20]:</label>
+      <input type="number" name="val1" id="val1" min="0" max="20" step="1" required>
+
+      <label for="val2">Glucose (Concentración de glucosa) [0 a 200]:</label>
+      <input type="number" name="val2" id="val2" min="0" max="200" step="any" required>
+
+      <label for="val3">Blood Pressure (Presión sanguínea) [0 a 150]:</label>
+      <input type="number" name="val3" id="val3" min="0" max="150" step="any" required>
+
+      <label for="val4">Skin Thickness (Grosor del pliegue cutáneo) [0 a 100]:</label>
+      <input type="number" name="val4" id="val4" min="0" max="100" step="any" required>
+
+      <label for="val5">Insulin (Nivel de insulina) [0 a 900]:</label>
+      <input type="number" name="val5" id="val5" min="0" max="900" step="any" required>
+
+      <label for="val6">BMI (Índice de masa corporal) [0 a 70]:</label>
+      <input type="number" name="val6" id="val6" min="0" max="70" step="any" required>
+
+      <label for="val7">Diabetes Pedigree Function (Función genética) [0 a 2]:</label>
+      <input type="number" name="val7" id="val7" min="0" max="2" step="any" required>
+
+      <label for="val8">Age (Edad) [0 a 120]:</label>
+      <input type="number" name="val8" id="val8" min="0" max="120" step="1" required>
+
+      <input type="submit" value="Predecir">
+    </form>
+
+    {% if prediction_text %}
+      <div class="result">{{ prediction_text }}</div>
+    {% endif %}
+  </div>
+</body>
+</html>
