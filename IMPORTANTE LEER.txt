@@ -1,0 +1,3 @@
+Debido a que mi país Venezuela es víctima de numerosos bloqueos, Render me pide verificación de identidad con una tarjeta de débido, la cual se posee, se colocaron los datos
+correctamente, pero de todas formas Render se rehúso a tomar la identificación, de forma que al final NO ME PERMITIÓ subir la aplicación, tengo una VPN así que no es posible
+que sea la dirección IP de Venezuela, sino que Render no acepta la tarjeta de débito internacional creada en este país, por favor comprender.
